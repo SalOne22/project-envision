@@ -105,7 +105,7 @@ async function searchMovie(currentPage) {
     refs.gallery.innerHTML = addingMovies;
     initRatings();
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
