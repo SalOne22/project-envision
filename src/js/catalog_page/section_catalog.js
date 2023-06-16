@@ -3,12 +3,13 @@ import axios from 'axios';
 import initRatings from '../utils/initRating';
 import movieCardMarkup from '../markup/movieCardMarkup';
 import Pagination from '../utils/pagination';
-import { API_KEY } from '../api/catalogAPI';
-import { URL } from '../api/catalogAPI';
+import { API_KEY, URL } from '../api/catalogAPI';
 import { refs } from './catalog-refs';
 import { onOpenModalFilmById } from '../modals/modal_film.js';
 
-export async function fetchMoviesOfweek(currentPage) {
+const MAX_PAGES = 197;
+
+export async function fetchMoviesOfWeek(currentPage) {
   try {
     const { data } = await axios.get(
       `${URL}trending/all/week?language=en-US&page=${currentPage}`,
@@ -50,7 +51,7 @@ function noMovie() {
 
 export async function galleryOfWeek(currentPage) {
   try {
-    let result = await fetchMoviesOfweek(currentPage);
+    let result = await fetchMoviesOfWeek(currentPage);
     const addingMovies = buildGallery(result.results);
     refs.gallery.innerHTML = addingMovies;
     initRatings();
@@ -66,7 +67,7 @@ initGalleryOfWeek();
 
 async function initGalleryOfWeek() {
   try {
-    let result = await fetchMoviesOfweek(1);
+    let result = await fetchMoviesOfWeek(1);
     const addingMovies = buildGallery(result.results);
     refs.gallery.innerHTML = addingMovies;
 
@@ -93,7 +94,7 @@ async function initGalleryOfWeek() {
 function paginationWeek(props) {
   new Pagination({
     container: refs.paginationContainer,
-    count: Math.min(props.total_pages, 197),
+    count: Math.min(props.total_pages, MAX_PAGES),
     index: 1,
     callback: galleryOfWeek,
   });

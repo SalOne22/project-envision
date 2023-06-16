@@ -1,4 +1,8 @@
 import genres from '../genres.json';
+
+const MAX_CHARS_IN_GENRES = 20;
+const DIGITS_IN_YEAR = 4;
+
 // ---to do import
 export default ({
   poster_path,
@@ -16,7 +20,10 @@ export default ({
   });
 
   if (genre_ids.length > 0) {
-    if (genre_ids.length === 1 || genre_ids.join(', ').length <= 20) {
+    if (
+      genre_ids.length === 1 ||
+      genre_ids.join(', ').length <= MAX_CHARS_IN_GENRES
+    ) {
       genreNames = genresObject[genre_ids[0]];
     } else {
       genreNames = `${genresObject[genre_ids[0]]}, ${
@@ -55,7 +62,10 @@ export default ({
       <div class='genre-year-movie-card'>
         <p class='genre-movie-card span'>${genreNames}</p>
         <span class='divider-movie-card'>&#124</span>
-        <p class='year-movie-card span'>${release_date.slice(0, 4)}</p>
+        <p class='year-movie-card span'>${release_date.slice(
+          0,
+          DIGITS_IN_YEAR
+        )}</p>
       </div>
         <div class="rating">
           <div class="rating-body">

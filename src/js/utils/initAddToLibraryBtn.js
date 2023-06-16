@@ -1,7 +1,11 @@
-import { checkMovie, removeMovie, saveMovie } from '../api/libraryAPI';
+import {
+  checkMovie,
+  removeMovie,
+  saveMovie,
+  loadMovie,
+} from '../api/libraryAPI';
 import { onCloseModalFilm } from '../modals/modal_film';
 import loaderWrapper from '../loader';
-import { loadMovie } from '../api/libraryAPI';
 import refs from '../refs/library-refs';
 import movieCardMarkup from '../markup/movieCardMarkup';
 

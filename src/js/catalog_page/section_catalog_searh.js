@@ -3,21 +3,23 @@ import customSelect from 'custom-select';
 import axios from 'axios';
 import initRatings from '../utils/initRating';
 import 'custom-select/build/custom-select.css';
-import { buildGallery } from './section_catalog';
-import { galleryOfWeek } from './section_catalog';
+import { buildGallery, galleryOfWeek } from './section_catalog';
 import populateOptions from '../utils/populateOptions';
 import Pagination from '../utils/pagination';
-import { API_KEY } from '../api/catalogAPI';
-import { URL } from '../api/catalogAPI';
+import { API_KEY, URL } from '../api/catalogAPI';
 import { refs } from './catalog-refs';
 import dataGenres from '../genres.json';
+
+const LAST_YEAR = 2023;
+const FIRST_YEAR = 1895;
+const MAX_PAGES = 197;
 
 let formData = '';
 let yearParam = '';
 
 const years = [];
 
-for (let year = 2023; year >= 1895; year -= 1) {
+for (let year = LAST_YEAR; year >= FIRST_YEAR; year -= 1) {
   years.push({
     id: year,
     name: year,
@@ -87,7 +89,7 @@ async function fetchMoviesSearch(currentPage) {
 function paginationSearh(props) {
   new Pagination({
     container: refs.paginationContainer,
-    count: Math.min(props.total_pages, 197),
+    count: Math.min(props.total_pages, MAX_PAGES),
     index: 1,
     callback: searchMovie,
   });

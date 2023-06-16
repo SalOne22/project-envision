@@ -1,3 +1,4 @@
+/*eslint no-magic-numbers: "off"*/
 export default class Pagination {
   pageCount = 0;
   pageIndex = 0;

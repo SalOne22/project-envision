@@ -1,6 +1,8 @@
 import axios from 'axios';
 import initAddToLibraryBtn from '../utils/initAddToLibraryBtn';
 
+const MAX_NUMBER_OF_GENRES = 2;
+
 const BASE_URL = 'https://api.themoviedb.org/3/movie/';
 const options = {
   headers: {
@@ -99,7 +101,7 @@ function createCardMarkup(data) {
   } = data;
 
   const genreName = genres ? genres.map(genre => genre.name) : [];
-  const genresList = genreName.slice(0, 2).join(', ');
+  const genresList = genreName.slice(0, MAX_NUMBER_OF_GENRES).join(', ');
 
   return `<li class="film--add" data-id="${id}">
   <div class="film-add__wrap">

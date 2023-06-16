@@ -3,19 +3,23 @@ import { onTrailerBtnClick } from '../modals/modal_trailer.js';
 import { heroRefs } from '../refs/hero-refs.js';
 import { onOpenModalFilm } from '../modals/modal_film.js';
 
+const MAX_TRENDING_MOVIES = 20;
+const NUMBER_OF_STARS = 10;
+const TABLET_WIDTH = 768;
+
 export const markupRandomTrendingMovie = async () => {
   let markup = '';
   let posterStyle = 'background-size: cover';
-  const randomNum = Math.floor(Math.random() * 20) + 0;
+  const randomNum = Math.floor(Math.random() * MAX_TRENDING_MOVIES) + 0;
 
   try {
     const { results } = await fetchTrendingMoviesByDay();
     const { id, title, overview, backdrop_path, vote_average } =
       results[randomNum];
-    const ratingValue = vote_average * 10;
+    const ratingValue = vote_average * NUMBER_OF_STARS;
     const posterUrl = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < TABLET_WIDTH) {
       posterStyle = 'background-size: 768px; background-position: center';
     }
 

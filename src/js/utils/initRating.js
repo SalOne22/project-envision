@@ -1,3 +1,5 @@
+const NUMBER_OF_STARS = 10;
+
 export default function initRatings() {
   const ratings = document.querySelectorAll('.rating');
 
@@ -15,6 +17,6 @@ function initRating(rating) {
 }
 
 function setRatingActiveWidth(ratingActive, index) {
-  const ratingActiveWidth = (index / 10) * 100;
+  const ratingActiveWidth = (index / NUMBER_OF_STARS) * 100;
   ratingActive.style.width = `${ratingActiveWidth}%`;
 }

@@ -1,5 +1,8 @@
 import genres from '../genres.json';
 import initAddToLibraryBtn from '../utils/initAddToLibraryBtn';
+
+const MAX_NUMBER_OF_GENRES = 2;
+
 let genresNames = '';
 const genresArray = genres.genres;
 const upcoming = document.querySelector('.upcoming');
@@ -88,9 +91,9 @@ function convertGenresToNames(array, arrayOfObjects) {
     });
   });
 
-  if (genresNamesArray.length > 2) {
+  if (genresNamesArray.length > MAX_NUMBER_OF_GENRES) {
     genresNames = `${genresNamesArray[0]} and others...`;
-  } else if (genresNamesArray.length === 2) {
+  } else if (genresNamesArray.length === MAX_NUMBER_OF_GENRES) {
     genresNames = `${genresNamesArray[0]}, ${genresNamesArray[1]}`;
   } else {
     genresNames = `${genresNamesArray[0]}`;

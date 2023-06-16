@@ -1,5 +1,7 @@
 import { modalTeamRefs } from '../refs/modal-team-refs';
 
+const ANIMATION_DELAY = 200;
+
 modalTeamRefs.openModalBtn.addEventListener('click', onButtonTeamClick);
 // modalTeamRefs.backdrop.addEventListener('click', onButtonTeamClick);
 // modalTeamRefs.closeModalBtn.addEventListener('click', onButtonTeamClick);
@@ -48,6 +50,6 @@ function animateTeamItems() {
   modalTeamRefs.teamItems.forEach((item, index) => {
     setTimeout(() => {
       item.classList.add('animate');
-    }, index * 200); // Додайте затримку між анімаціями кожного елемента
+    }, index * ANIMATION_DELAY); // Додайте затримку між анімаціями кожного елемента
   });
 }

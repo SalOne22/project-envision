@@ -1,8 +1,10 @@
 const button = document.getElementById('scrollToTopBtn');
 
+const MIN_SCROLL_TO_APPEAR = 100;
+
 const displayButton = () => {
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > MIN_SCROLL_TO_APPEAR) {
       button.classList.add('show-btn');
       button.classList.remove('remove-btn');
     } else if (window.scrollY === 0) {

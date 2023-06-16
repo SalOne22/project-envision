@@ -5,6 +5,8 @@ import refs from '../refs/weekly_trends-refs';
 import { getTrendingMoviesByWeek } from '../api/weekly_trends-api';
 import { onOpenModalFilmById } from '../modals/modal_film.js';
 
+const MAX_MOVIES_IN_SECTION = 3;
+
 if (refs.movieList) {
   const genresObject = {};
   genres.genres.forEach(genre => {
@@ -43,7 +45,7 @@ function markupMovie(moviesToShow) {
 
 function getRandomMovieToShow(results) {
   const randomIndexes = [];
-  while (randomIndexes.length < 3) {
+  while (randomIndexes.length < MAX_MOVIES_IN_SECTION) {
     const randomIndex = Math.floor(Math.random() * results.length);
     if (!randomIndexes.includes(randomIndex)) {
       randomIndexes.push(randomIndex);
