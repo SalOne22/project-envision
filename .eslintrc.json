@@ -7,5 +7,17 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
+  },
+  "rules": {
+    "no-duplicate-imports": "error",
+    "eqeqeq": "error",
+    "no-magic-numbers": [
+      "error",
+      {
+        "ignore": [0, 1, 100],
+        "ignoreArrayIndexes": true,
+        "ignoreDefaultValues": true
+      }
+    ]
   }
 }
