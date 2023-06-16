@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Notify } from 'notiflix';
 
 const BASE_URL = 'https://api.themoviedb.org/3/movie/upcoming';
 const options = {
@@ -16,6 +17,6 @@ export default async function getUpcomingMovies() {
     return response.data;
   } catch (error) {
     console.error(error);
-    Notiflix.Notify.failure('Oops! Something went wrong. Try again, please!');
+    Notify.failure('Oops! Something went wrong. Try again, please!');
   }
 }

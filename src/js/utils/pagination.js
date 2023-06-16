@@ -1,5 +1,3 @@
-import { galleryOfWeek } from '../catalog_page/section_catalog';
-
 export default class Pagination {
   pageCount = 0;
   pageIndex = 0;

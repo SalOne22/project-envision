@@ -1,9 +1,8 @@
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix';
 import axios from 'axios';
 import initRatings from '../utils/initRating';
 import movieCardMarkup from '../markup/movieCardMarkup';
 import Pagination from '../utils/pagination';
-import movieCardMarkup from '../markup/movieCardMarkup';
 import { API_KEY } from '../api/catalogAPI';
 import { URL } from '../api/catalogAPI';
 import { refs } from './catalog-refs';
@@ -22,7 +21,7 @@ export async function fetchMoviesOfweek(currentPage) {
     );
     return data;
   } catch (error) {
-    Notiflix.Notify.failure(
+    Notify.failure(
       'Sorry, there are no movies matching your search query. Please try again.'
     );
   }
@@ -35,6 +34,18 @@ export function buildGallery(movies) {
       return '';
     })
     .join('');
+}
+
+function noMovie() {
+  refs.paginationContainer.innerHTML = '';
+  refs.gallery.innerHTML = `
+    <div class="gallery-empty"
+        <p class="text-empty">OOPS...<br>
+        We are very sorry!<br>
+        We don’t have any results matching your search.
+        </p>
+    </div>   
+    `;
 }
 
 export async function galleryOfWeek(currentPage) {

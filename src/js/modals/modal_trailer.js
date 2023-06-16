@@ -41,7 +41,7 @@ function onBackdropClick(e) {
 
 function closeModal() {
   document.body.classList.remove('show-trailer-modal');
-  trailerIframe.src = '';
+  modalTrailerRefs.trailerIframe.src = '';
   window.removeEventListener('keydown', onEscPress);
   modalTrailerRefs.trailerBackdropEl.removeEventListener(
     'click',
@@ -56,7 +56,7 @@ function closeModal() {
 async function renderTrailer(movieId) {
   let movieTrailerKey = await fetchRandomTrailerKey(movieId);
   if (movieTrailerKey) {
-    trailerIframe.setAttribute(
+    modalTrailerRefs.trailerIframe.setAttribute(
       'src',
       `https://www.youtube.com/embed/${movieTrailerKey}`
     );

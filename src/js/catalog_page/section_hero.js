@@ -55,7 +55,7 @@ export const markupRandomTrendingMovie = async () => {
 
     const movieInfoBtn = document.querySelector('.hero__btn.m-modal');
     // movieInfoBtn.addEventListener('click', e => onOpenModalFilm(e));
-    movieInfoBtn.addEventListener('click', e =>
+    movieInfoBtn.addEventListener('click', () =>
       onOpenModalFilmById(movieInfoBtn.dataset.id)
     );
   } catch (error) {

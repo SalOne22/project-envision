@@ -1,7 +1,7 @@
 import movieCardMarkup from '../markup/movieCardMarkup';
 import populateOptions from '../utils/populateOptions';
 import initRatings from '../utils/initRating';
-import { loadMovies, loadMovie } from '../api/libraryAPI';
+import { loadMovies } from '../api/libraryAPI';
 import { onOpenModalFilmById } from '../modals/modal_film';
 import refs from '../refs/library-refs';
 

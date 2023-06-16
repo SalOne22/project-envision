@@ -2,7 +2,6 @@ import axios from 'axios';
 import initAddToLibraryBtn from '../utils/initAddToLibraryBtn';
 
 const BASE_URL = 'https://api.themoviedb.org/3/movie/';
-const API_KEY = '5708ddba333b2f1cf02bfd604f4dc65c';
 const options = {
   headers: {
     Authorization:
@@ -17,8 +16,6 @@ async function getMovieDetails(movieId) {
   return response.data;
 }
 
-const filmTrendsCards = document.querySelector('.list-movie-card'); //ul трендів
-const filmCatalogCards = document.querySelector('.gallery'); //li з каталогу
 const modBackdrop = document.querySelector('.modal-backdrop'); //div мій
 const closeBtn = document.querySelector('.modal__close-btn'); //моя кнопка
 const modalListRef = document.querySelector('.cards-film'); //ul моє з розмітки
@@ -71,8 +68,6 @@ function onEscKeyPress(event) {
 
 function loadIntoModal(idMovie) {
   try {
-    const data = getMovieDetails(idMovie);
-
     getMovieDetails(idMovie)
       .then(data => {
         // console.log(data);
@@ -95,7 +90,6 @@ function createCardMarkup(data) {
   const {
     original_title,
     id,
-    genre_names,
     genres,
     vote_average,
     poster_path,
