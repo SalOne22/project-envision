@@ -5,20 +5,19 @@
 
 .gallery-empty {
   flex-direction: column;
-    align-items: center;
-    display: flex;
+  align-items: center;
+  display: flex;
   text-align: center;
-    color: var(--title-text-color);
-    margin: auto;
+  color: var(--title-text-color);
+  margin: auto;
 }
-
 
 .gallery-empty {
   padding-top: 32px;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-    line-height: 28px;
+  line-height: 28px;
   margin-bottom: -20px;
 }
 
@@ -37,8 +36,6 @@
   align-items: center;
   justify-content: space-between;
 }
-
-
 
 .box-search {
   position: relative;
@@ -112,8 +109,6 @@
   color: $input-text-color;
 }
 
-
-
 .search-form button[type='submit'],
 .load-more {
   width: 40px;
@@ -166,14 +161,10 @@
   margin-bottom: 20px;
 }
 
-
-
 .gallery .photo-card .card-image {
   object-fit: fill;
   border-radius: 10px;
 }
-
-
 
 .form-input,
 .clear-btn,
@@ -235,8 +226,6 @@
 .ganre-select {
   @include custom-select(220px, 181px, 281px, false);
 }
-
-
 
 .pagination ul {
   width: 100%;
@@ -306,8 +295,6 @@
   color: $header-logo-color;
   background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
 }
-
-
 
 li.btn.prev.list-item {
   font-size: 22px;
@@ -423,17 +410,15 @@ li.btn.next.list-item:hover {
     font-size: 42px;
   }
 
-        .gallery-empty {
-          padding-top: 44px;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 24px;
-          line-height: 32px;
-          margin-bottom: -44px;
-        }
+  .gallery-empty {
+    padding-top: 44px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: -44px;
+  }
 }
-
-
 
 @media screen and (min-width: 1280px) {
   .section-catalog {
@@ -448,7 +433,6 @@ li.btn.next.list-item:hover {
   }
 
   .form-input {
-
     margin-bottom: 0;
     width: 315px;
     height: 42px;
@@ -458,7 +442,7 @@ li.btn.next.list-item:hover {
     margin-bottom: 0;
   }
 
-  .form-input~span {
+  .form-input ~ span {
     top: 9px;
   }
 
@@ -472,11 +456,10 @@ li.btn.next.list-item:hover {
     margin: -10px;
   }
 
-    .gallery {
-  
-      gap: 32px 15px;
-      margin-bottom: 60px;
-    }
+  .gallery {
+    gap: 32px 15px;
+    margin-bottom: 60px;
+  }
 
   .pagination ul li.list-item {
     width: 40px;
@@ -503,18 +486,12 @@ li.btn.next.list-item:hover {
     font-size: 42px;
   }
 
-  .gallery-empty{
-        padding-top: 72px;
-        font-style: normal;
-          font-weight: 400;
-          font-size: 32px;
-          line-height: 36px;
-          margin-bottom: -60px;
+  .gallery-empty {
+    padding-top: 72px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: -60px;
   }
-
-    
-
-    
 }
-
-

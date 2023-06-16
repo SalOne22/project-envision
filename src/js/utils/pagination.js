@@ -115,15 +115,13 @@ export default class Pagination {
     const isButton = anchorEl?.classList.contains('btn') || false;
     const isPrev = anchorEl?.classList.contains('prev') || false;
 
-
-    if (isButton) {  
-      
+    if (isButton) {
       if (this.pageIndex < this.pageCount && !isPrev) {
         this.setPageIndex(this.pageIndex + 1);
       } else if (this.pageIndex > 1 && isPrev) {
         this.setPageIndex(this.pageIndex - 1);
       } else if (this.pageIndex === this.pageCount && !isPrev) {
-        anchorEl.disabled = true
+        anchorEl.disabled = true;
       }
 
       console.log(this.callBack);
@@ -133,7 +131,6 @@ export default class Pagination {
     }
 
     if (anchorEl) {
-      
       const dataIndex = parseInt(anchorEl.dataset.index, 10);
       this.setPageIndex(dataIndex);
 
@@ -148,10 +145,9 @@ export default class Pagination {
   }
 }
 
-const gallery = document.querySelector('.gallery')
+const gallery = document.querySelector('.gallery');
 
 function scrollToAnchor() {
-   
   gallery.scrollIntoView({
     behavior: 'smooth',
     block: 'start',
