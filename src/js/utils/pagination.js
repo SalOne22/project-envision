@@ -55,18 +55,12 @@ export default class Pagination {
     } else if (this.pageIndex === 2) {
       afterPage = afterPage + 1;
     }
-    console.log({
-      pageIndex: this.pageIndex,
-      pageCount: this.pageCount,
-      beforePage,
-      afterPage,
-    });
+
     for (let plength = beforePage; plength <= afterPage; plength++) {
       if (plength > this.pageCount) {
         //if plength is greater than totalPage length then continue
         continue;
       }
-      console.log({ plength });
       if (plength < 0) {
         plength = 0;
       }
@@ -124,7 +118,6 @@ export default class Pagination {
         anchorEl.disabled = true;
       }
 
-      console.log(this.callBack);
       this.callBack(this.pageIndex);
       scrollToAnchor();
       return;

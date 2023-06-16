@@ -20,7 +20,6 @@ export async function fetchMoviesOfweek(currentPage) {
         },
       }
     );
-    console.log(data);
     return data;
   } catch (error) {
     Notiflix.Notify.failure(

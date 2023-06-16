@@ -75,7 +75,7 @@ async function removeMovieFromLibrary(id) {
           movieCardMarkup(movie)
         );
       })
-      .catch(console.log);
+      .catch(console.error);
   }
 
   if (moviesLength === 0) {

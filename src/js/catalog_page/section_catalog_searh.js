@@ -51,7 +51,6 @@ genresSelect.select.addEventListener('change', filterMoviesByGenre);
 function filterMoviesYear(evt) {
   let year = evt.target.value;
   yearParam = `&primary_release_year=${year}`;
-  console.log(yearParam);
 }
 
 function noMovie() {
@@ -77,7 +76,6 @@ async function fetchMoviesSearch(currentPage) {
         },
       }
     );
-    console.log(data);
     return data;
   } catch (error) {
     Notiflix.Notify.failure(
