@@ -1,5 +1,4 @@
 import Notiflix from 'notiflix';
-import Pagination from 'tui-pagination';
 import customSelect from 'custom-select';
 import axios from 'axios';
 import initRatings from '../utils/initRating';
