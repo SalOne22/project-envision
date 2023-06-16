@@ -83,7 +83,7 @@ function loadIntoModal(idMovie) {
         const addBtnEl = modalListRef.querySelector('.js-add-to-lib-btn');
         initAddToLibraryBtn(addBtnEl);
       })
-      .catch(err => console.log(err));
+      .catch(err => console.error(err));
   } catch (err) {
     modalListRef.innerHTML =
       '<div class="modal__empty">Sorry, info is unavailable</div>';

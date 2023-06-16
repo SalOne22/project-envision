@@ -16,6 +16,6 @@ export async function getTrendingMoviesByWeek(page = 1) {
     );
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }

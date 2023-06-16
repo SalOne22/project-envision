@@ -48,7 +48,7 @@ export async function galleryOfWeek(currentPage) {
       return noMovie();
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
@@ -76,7 +76,7 @@ async function initGalleryOfWeek() {
     }
     paginationWeek(result);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 

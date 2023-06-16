@@ -18,7 +18,7 @@ function handlerMoviesWeek(genresObject) {
     .then(data => {
       createMarkupMovies(data, genresObject);
     })
-    .catch(err => console.log(err));
+    .catch(err => console.error(err));
 }
 function createMarkupMovies({ results }, genresObject) {
   const randomIndexes = getRandomMovieToShow(results);

@@ -7,6 +7,6 @@ getUpcomingMovies()
     markupUpcomingMovies(data);
   })
   .catch(error => {
-    console.log(error);
+    console.error(error);
     Notiflix.Notify.failure('Oops! Something went wrong. Try again, please!');
   });

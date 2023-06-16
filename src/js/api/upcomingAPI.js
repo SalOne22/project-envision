@@ -15,7 +15,7 @@ export default async function getUpcomingMovies() {
     const response = await axios.get(BASE_URL, options);
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     Notiflix.Notify.failure('Oops! Something went wrong. Try again, please!');
   }
 }
