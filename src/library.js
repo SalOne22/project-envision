@@ -1,6 +1,6 @@
 import './js/header';
 
-import './js/libraru_page';
+import './js/library_page';
 
 import './js/modals';
 
