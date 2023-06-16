@@ -22,6 +22,8 @@
 
 //components
 
+@import './components/hero';
+
 @import './components/section';
 @import './components/buttons.scss';
 @import './components/footer.scss';
@@ -33,11 +35,9 @@
 @import './components/select.scss';
 
 // Home page
-@import './pages/home/hero';
 @import './pages/home/weekly_trends.scss';
 
 // Catalog page
-@import './pages/catalog/hero.scss';
 @import './pages/catalog/search.scss';
 
 // Hidden class

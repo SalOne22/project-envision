@@ -1,3 +1,3 @@
 import './section_catalog';
-import './section_hero';
+import '../components/Hero/Hero';
 import './section_catalog_searh';

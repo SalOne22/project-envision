@@ -117,7 +117,7 @@
   display: block;
   letter-spacing: 4px;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: $text-color-accent;
+  -webkit-text-stroke-color: $orange-color;
   color: transparent;
 }
 .rating-active {
@@ -137,7 +137,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  color: $text-color-accent;
+  color: $orange-color;
 }
 
 .rating-items {

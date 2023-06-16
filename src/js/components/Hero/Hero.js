@@ -1,16 +1,16 @@
-import { fetchTrendingMoviesByDay } from '../api/fetch-api.js';
-import { onTrailerBtnClick } from '../modals/modal_trailer.js';
-import { heroRefs } from '../refs/hero-refs.js';
-import { onOpenModalFilm } from '../modals/modal_film.js';
+import { fetchTrendingMoviesByDay } from '../../api/fetch-api.js';
+import { onTrailerBtnClick } from '../../modals/modal_trailer.js';
+import { heroRefs } from '../../refs/hero-refs.js';
+import { onOpenModalFilmById } from '../../modals/modal_film.js';
 
 const MAX_TRENDING_MOVIES = 20;
 const NUMBER_OF_STARS = 10;
 const TABLET_WIDTH = 768;
 
-export const markupRandomTrendingMovie = async () => {
+const markupRandomTrendingMovie = async () => {
   let markup = '';
   let posterStyle = 'background-size: cover';
-  const randomNum = Math.floor(Math.random() * MAX_TRENDING_MOVIES) + 0;
+  const randomNum = Math.floor(Math.random() * MAX_TRENDING_MOVIES);
 
   try {
     const { results } = await fetchTrendingMoviesByDay();
@@ -45,7 +45,7 @@ export const markupRandomTrendingMovie = async () => {
             </p>
             <div class="hero__btns" id="${id}">
               <button id="watch-trailer" class="hero__btn hero__btn--primary hero__btn--watch-trailer" data-movie-id="${id}">Watch trailer</button>
-              <button class="hero__btn hero__btn--secondary m-modal data-movie-id="${id}" data-id="${id}" >More details</button>
+              <button class="hero__btn hero__btn--secondary m-modal data-movie-id="${id}" data-id="${id}">More details</button>
             </div>
           </div>
         </div>
@@ -57,32 +57,58 @@ export const markupRandomTrendingMovie = async () => {
     trailerBtn.addEventListener('click', e => onTrailerBtnClick(e));
 
     const movieInfoBtn = document.querySelector('.hero__btn.m-modal');
-    movieInfoBtn.addEventListener('click', e => onOpenModalFilm(e));
+    // movieInfoBtn.addEventListener('click', e => onOpenModalFilm(e));
+    movieInfoBtn.addEventListener('click', () =>
+      onOpenModalFilmById(movieInfoBtn.dataset.id)
+    );
   } catch (error) {
-    heroRefs.heroContainer.classList.toggle('hero--bg-lib');
-    markup = `
-      <div class="container">
-        <div class="lib-hero__wrap">
-          <h1 class="lib-hero__title">Create Your Dream Cinema</h1>
-          <p class="lib-hero__text">
-            Is a guide to designing a personalized movie theater experience with the
-            right equipment, customized decor, and favorite films. This guide helps
-            you bring the cinema experience into your own home with cozy seating,
-            dim lighting, and movie theater snacks.
-          </p>
-        </div>
-      </div>`;
-
+    heroRefs.heroContainer.classList.toggle(
+      location.pathname.includes('library') ? 'hero--bg-lib' : 'hero--bg'
+    );
+    markup = location.pathname.includes('library')
+      ? markupDefaultLibraryHero()
+      : markupDefaultHero();
     heroRefs.heroContainer.innerHTML = markup;
-  } finally {
-    // heroRefs.heroContainer.innerHTML = markup;
-    // const trailerBtn = document.getElementById('watch-trailer');
-    // if (trailerBtn) {
-    //   trailerBtn.addEventListener('click', event => {
-    //     onTrailerBtnClick(event);
-    //   });
-    // }
   }
 };
 
 markupRandomTrendingMovie();
+
+function markupDefaultHero() {
+  return `
+  <div class="hero__wrap">
+    <div class="container">
+      <div class="hero__inner">
+        <h1 class="hero__title hero__title--default">Let’s Make Your Own Cinema</h1>
+        <p class="hero__text">
+          Is a guide to creating a personalized movie theater experience.
+          You'll need a projector, screen, and speakers.
+          <span class="hero__text--add">Decorate your space, choose your films, and stock up on snacks for the full experience.</span>
+        </p>
+
+        <div class="hero__btns">
+          <a href="./catalog.html">
+            <button class="hero__btn hero__btn--primary">
+              Get Started
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function markupDefaultLibraryHero() {
+  return `
+  <div class="container">
+    <div class="lib-hero__wrap">
+      <h1 class="lib-hero__title">Create Your Dream Cinema</h1>
+      <p class="lib-hero__text">
+        Is a guide to designing a personalized movie theater experience with the
+        right equipment, customized decor, and favorite films. This guide helps
+        you bring the cinema experience into your own home with cozy seating,
+        dim lighting, and movie theater snacks.
+      </p>
+    </div>
+  </div>`;
+}
