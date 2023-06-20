@@ -1,46 +1,24 @@
-import genres from '../genres.json';
-import movieCardMarkup from '../markup/movieCardMarkup';
-import initRatings from '../utils/initRating';
 import refs from '../refs/weekly_trends-refs';
 import { getTrendingMoviesByWeek } from '../api/weekly_trends-api';
-import { onOpenModalFilmById } from '../modals/modal_film.js';
+import makeMovieList from '../components/MovieList/MovieList';
 
 const MAX_MOVIES_IN_SECTION = 3;
 
 if (refs.movieList) {
-  const genresObject = {};
-  genres.genres.forEach(genre => {
-    genresObject[genre.id] = genre.name;
-  });
-  handlerMoviesWeek(genresObject);
+  handlerMoviesWeek();
 }
 
-function handlerMoviesWeek(genresObject) {
+function handlerMoviesWeek() {
   getTrendingMoviesByWeek()
     .then(data => {
-      createMarkupMovies(data, genresObject);
+      createMarkupMovies(data);
     })
     .catch(err => console.error(err));
 }
-function createMarkupMovies({ results }, genresObject) {
+function createMarkupMovies({ results }) {
   const randomIndexes = getRandomMovieToShow(results);
   const moviesToShow = randomIndexes.map(index => results[index]);
-  markupMovie(moviesToShow, genresObject);
-}
-
-function markupMovie(moviesToShow) {
-  refs.movieList.innerHTML = moviesToShow.map(movieCardMarkup).join('');
-  initRatings();
-
-  // START Добавляем слушателя для открытия модалки
-  const catalog = document.querySelector('.list-movie-card.js-gallery');
-  catalog.addEventListener('click', e => {
-    const closestId = e.target.closest('.m-modal');
-    if (!closestId) return;
-    const movieId = closestId.dataset.id;
-    onOpenModalFilmById(movieId);
-  });
-  // END
+  makeMovieList(moviesToShow, refs.movieList);
 }
 
 function getRandomMovieToShow(results) {
