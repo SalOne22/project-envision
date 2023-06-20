@@ -12,8 +12,7 @@
     display: flex;
     align-items: center;
     bottom: 70px;
-    right: -35px;
-    writing-mode: vertical-rl;
+    right: 0;
     background-color: transparent;
     border: none;
     opacity: 0;
@@ -21,14 +20,11 @@
     transform: rotate(-90deg);
     transition: opacity 1s $transition-cubic-bezier,
       transform 1s $transition-cubic-bezier;
-    writing-mode: vertical-rl;
-    z-index: 50;
   }
 
   .to-top-btn svg {
     margin-left: 5px;
     fill: $orange-color;
-    z-index: 50;
   }
 
   .to-top-btn:hover,
@@ -38,19 +34,10 @@
 
   .to-top-btn.show-btn {
     opacity: 1;
-    z-index: 50;
   }
 
   .to-top-btn.remove-btn {
     opacity: 0;
-    z-index: 50;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .to-top-btn {
-    right: 0;
-    z-index: 50;
   }
 }
 
