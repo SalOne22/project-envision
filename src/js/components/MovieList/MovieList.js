@@ -2,7 +2,7 @@ import movieCardMarkup from '../../markup/movieCardMarkup';
 import initRatings from '../../utils/initRating';
 import { onOpenModalFilmById } from '../../modals/modal_film';
 
-export default function makeMovieList(moviesToShow, movieListEl) {
+export function makeMovieList(moviesToShow, movieListEl) {
   movieListEl.innerHTML = moviesToShow.map(movieCardMarkup).join('');
   initRatings();
 
@@ -12,4 +12,9 @@ export default function makeMovieList(moviesToShow, movieListEl) {
     const movieId = closestId.dataset.id;
     onOpenModalFilmById(movieId);
   });
+}
+
+export function updateMovieList(moviesToShow, movieListEl) {
+  movieListEl.innerHTML = moviesToShow.map(movieCardMarkup).join('');
+  initRatings();
 }

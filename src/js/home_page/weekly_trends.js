@@ -1,6 +1,6 @@
 import refs from '../refs/weekly_trends-refs';
 import { getTrendingMoviesByWeek } from '../api/weekly_trends-api';
-import makeMovieList from '../components/MovieList/MovieList';
+import { makeMovieList } from '../components/MovieList';
 
 const MAX_MOVIES_IN_SECTION = 3;
 
