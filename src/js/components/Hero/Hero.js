@@ -65,50 +65,7 @@ const markupRandomTrendingMovie = async () => {
     heroRefs.heroContainer.classList.toggle(
       location.pathname.includes('library') ? 'hero--bg-lib' : 'hero--bg'
     );
-    markup = location.pathname.includes('library')
-      ? markupDefaultLibraryHero()
-      : markupDefaultHero();
-    heroRefs.heroContainer.innerHTML = markup;
   }
 };
 
 markupRandomTrendingMovie();
-
-function markupDefaultHero() {
-  return `
-  <div class="hero__wrap">
-    <div class="container">
-      <div class="hero__inner">
-        <h1 class="hero__title hero__title--default">Let’s Make Your Own Cinema</h1>
-        <p class="hero__text">
-          Is a guide to creating a personalized movie theater experience.
-          You'll need a projector, screen, and speakers.
-          <span class="hero__text--add">Decorate your space, choose your films, and stock up on snacks for the full experience.</span>
-        </p>
-
-        <div class="hero__btns">
-          <a href="./catalog.html">
-            <button class="hero__btn hero__btn--primary">
-              Get Started
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>`;
-}
-
-function markupDefaultLibraryHero() {
-  return `
-  <div class="container">
-    <div class="lib-hero__wrap">
-      <h1 class="lib-hero__title">Create Your Dream Cinema</h1>
-      <p class="lib-hero__text">
-        Is a guide to designing a personalized movie theater experience with the
-        right equipment, customized decor, and favorite films. This guide helps
-        you bring the cinema experience into your own home with cozy seating,
-        dim lighting, and movie theater snacks.
-      </p>
-    </div>
-  </div>`;
-}
