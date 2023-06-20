@@ -1,5 +1,6 @@
 import './js/header';
 
+import './js/components/Hero';
 import './js/library_page';
 
 import './js/modals';
