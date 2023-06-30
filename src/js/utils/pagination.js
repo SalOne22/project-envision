@@ -1,4 +1,4 @@
-/*eslint no-magic-numbers: "off"*/
+/* eslint-disable no-magic-numbers */
 export default class Pagination {
   pageCount = 0;
   pageIndex = 0;
@@ -101,7 +101,7 @@ export default class Pagination {
     }
   }
 
-  async handlePaginationItemClick(e) {
+  handlePaginationItemClick(e) {
     e.stopPropagation();
     const target = e.target;
     const anchorEl = target.closest('.list-item');
