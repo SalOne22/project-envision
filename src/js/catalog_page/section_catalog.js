@@ -10,9 +10,14 @@ import { Search } from './search';
 import dataGenres from '../genres.json';
 import 'custom-select/build/custom-select.css';
 import noMovieMarkup from '../markup/noMovieMarkup';
+import { Filter } from './filter';
 
 const START_YEAR = 1895;
 const MAX_PAGES = 500;
+
+const updateGalleryOfWeek = makeUpdateGallery(getMoviesOfWeek);
+const updateGalleryBySearch = makeUpdateGallery(getMoviesBySearch);
+const updateGalleryByFilter = makeUpdateGallery(getMoviesByFilter);
 
 const pagination = new Pagination({
   container: refs.paginationContainer,
@@ -22,6 +27,7 @@ const pagination = new Pagination({
 });
 
 const search = new Search({});
+const genreFilter = new Filter({});
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -31,18 +37,13 @@ function noMovie() {
 }
 
 function onFilterMoviesByGenre(evt) {
-  const movies = refs.gallery.childNodes;
   let filter = evt.target.value;
 
-  if (filter === '-1') {
-    movies.forEach(movie => movie.classList.remove('is-hidden'));
-  } else {
-    movies.forEach(movie => {
-      movie.dataset.genres.split(',').includes(filter)
-        ? movie.classList.remove('is-hidden')
-        : movie.classList.add('is-hidden');
-    });
-  }
+  if (filter === '-1') return updateGalleryOfWeek(1);
+
+  genreFilter.filter = filter;
+
+  updateGalleryByFilter(1);
 }
 
 function onSearchInput(evt) {
@@ -104,18 +105,27 @@ async function getMoviesBySearch(currentPage) {
   return result;
 }
 
-async function updateGalleryOfWeek(currentPage) {
-  let result = await getMoviesOfWeek(currentPage);
-  if (result === null) return;
+async function getMoviesByFilter(currentPage) {
+  genreFilter.page = currentPage;
+  const result = await genreFilter.searchMovie();
 
-  updateMovieList(result.results, refs.gallery);
+  if (!result || result.total_results === 0) {
+    noMovie();
+    return null;
+  }
+
+  updatePagination(result, updateGalleryByFilter);
+
+  return result;
 }
 
-async function updateGalleryBySearch(currentPage) {
-  let result = await getMoviesBySearch(currentPage);
-  if (result === null) return;
+function makeUpdateGallery(callback) {
+  return async function (currentPage) {
+    let result = await callback(currentPage);
+    if (result === null) return;
 
-  updateMovieList(result.results, refs.gallery);
+    updateMovieList(result.results, refs.gallery);
+  };
 }
 
 async function init() {
@@ -127,7 +137,7 @@ async function init() {
 
   yearSelect.select.addEventListener(
     'change',
-    evt => (search.year = evt.target.value)
+    evt => (search.year = genreFilter.year = evt.target.value)
   );
   genresSelect.select.addEventListener('change', onFilterMoviesByGenre);
 

@@ -44,3 +44,24 @@ export async function fetchMoviesSearch(currentPage, query, year) {
     );
   }
 }
+
+export async function fetchMoviesFilter(currentPage, filter, year) {
+  try {
+    const { data } = await axios.get(
+      `${URL}discover/movie?with_genres=${filter}&page=${currentPage}${
+        year ? `&primary_release_year=${year}` : ''
+      }`,
+      {
+        headers: {
+          Authorization: `Bearer ${API_KEY}`,
+          accept: 'application/json',
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
+  }
+}

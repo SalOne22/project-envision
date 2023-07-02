@@ -95,20 +95,20 @@
       @include remove-before();
     }
 
-    &:first-child {
-      // Хак для "Не выбранного" варианта (По сути visually-hidden)
-      position: absolute;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      border: 0;
+    // &:first-child {
+    //   // Хак для "Не выбранного" варианта (По сути visually-hidden)
+    //   position: absolute;
+    //   overflow: hidden;
+    //   clip: rect(0 0 0 0);
+    //   width: 1px;
+    //   height: 1px;
+    //   margin: -1px;
+    //   padding: 0;
+    //   border: 0;
 
-      white-space: nowrap;
-      clip-path: inset(100%);
-    }
+    //   white-space: nowrap;
+    //   clip-path: inset(100%);
+    // }
 
     @if ($separator) {
       &:nth-child(n + 3) {
