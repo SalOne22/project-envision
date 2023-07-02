@@ -9,6 +9,7 @@ import getYears from '../utils/getYears';
 import { Search } from './search';
 import dataGenres from '../genres.json';
 import 'custom-select/build/custom-select.css';
+import noMovieMarkup from '../markup/noMovieMarkup';
 
 const START_YEAR = 1895;
 const MAX_PAGES = 500;
@@ -26,14 +27,7 @@ window.addEventListener('DOMContentLoaded', init);
 
 function noMovie() {
   refs.paginationContainer.innerHTML = '';
-  refs.gallery.innerHTML = `
-    <div class="gallery-empty"
-        <p class="text-empty">OOPS...<br>
-        We are very sorry!<br>
-        We don’t have any results matching your search.
-        </p>
-    </div>   
-    `;
+  refs.gallery.innerHTML = noMovieMarkup();
 }
 
 function onFilterMoviesByGenre(evt) {
