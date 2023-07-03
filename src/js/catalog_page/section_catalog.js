@@ -1,16 +1,19 @@
-import { Notify } from 'notiflix';
 import customSelect from 'custom-select';
-import Pagination from '../utils/pagination';
+import { Notify } from 'notiflix';
+
+import Pagination from 'js/utils/pagination';
+import populateOptions from 'js/utils/populateOptions';
+import getYears from 'js/utils/getYears';
+import noMovieMarkup from 'js/markup/noMovieMarkup';
+import { makeMovieList, updateMovieList } from 'js/components/MovieList';
+import { fetchMoviesOfWeek } from 'js/api/catalogAPI';
+
 import { refs } from './catalog-refs';
-import { makeMovieList, updateMovieList } from '../components/MovieList';
-import { fetchMoviesOfWeek } from '../api/catalogAPI';
-import populateOptions from '../utils/populateOptions';
-import getYears from '../utils/getYears';
 import { Search } from './search';
-import dataGenres from '../genres.json';
-import 'custom-select/build/custom-select.css';
-import noMovieMarkup from '../markup/noMovieMarkup';
 import { Filter } from './filter';
+
+import dataGenres from 'js/genres.json';
+import 'custom-select/build/custom-select.css';
 
 const START_YEAR = 1895;
 const MAX_PAGES = 500;
@@ -34,6 +37,29 @@ window.addEventListener('DOMContentLoaded', init);
 function noMovie() {
   refs.paginationContainer.innerHTML = '';
   refs.gallery.innerHTML = noMovieMarkup();
+}
+
+async function init() {
+  populateOptions(getYears(START_YEAR), refs.yearSelectEl);
+  populateOptions(dataGenres.genres, refs.genreSelectEl);
+
+  const yearSelect = customSelect(refs.yearSelectEl)[0];
+  const genresSelect = customSelect(refs.genreSelectEl)[0];
+
+  yearSelect.select.addEventListener(
+    'change',
+    evt => (search.year = genreFilter.year = evt.target.value)
+  );
+  genresSelect.select.addEventListener('change', onFilterMoviesByGenre);
+
+  refs.searchInput.addEventListener('input', onSearchInput);
+  refs.clearBtn.addEventListener('click', onClearBtnClick);
+  refs.form.addEventListener('submit', onSearch);
+
+  let result = await getMoviesOfWeek(1);
+  if (result === null) return;
+
+  makeMovieList(result.results, refs.gallery);
 }
 
 function onFilterMoviesByGenre(evt) {
@@ -126,29 +152,6 @@ function makeUpdateGallery(callback) {
 
     updateMovieList(result.results, refs.gallery);
   };
-}
-
-async function init() {
-  populateOptions(getYears(START_YEAR), refs.yearSelectEl);
-  populateOptions(dataGenres.genres, refs.genreSelectEl);
-
-  const yearSelect = customSelect(refs.yearSelectEl)[0];
-  const genresSelect = customSelect(refs.genreSelectEl)[0];
-
-  yearSelect.select.addEventListener(
-    'change',
-    evt => (search.year = genreFilter.year = evt.target.value)
-  );
-  genresSelect.select.addEventListener('change', onFilterMoviesByGenre);
-
-  refs.searchInput.addEventListener('input', onSearchInput);
-  refs.clearBtn.addEventListener('click', onClearBtnClick);
-  refs.form.addEventListener('submit', onSearch);
-
-  let result = await getMoviesOfWeek(1);
-  if (result === null) return;
-
-  makeMovieList(result.results, refs.gallery);
 }
 
 function updatePagination(props, callback) {
