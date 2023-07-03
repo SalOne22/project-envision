@@ -1,3 +1,8 @@
+@use 'src/sass/base/variables' as *;
+@use 'src/sass/mixins/breakpoint' as *;
+@use 'src/sass/mixins/buttons' as *;
+@use 'src/sass/mixins/select' as *;
+
 .library {
   font-family: $font-family;
 }

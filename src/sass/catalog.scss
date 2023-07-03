@@ -1,44 +1,33 @@
 // normalize
 
-@import './base/normalize.scss';
+@use './base/normalize';
 
 // features
 
-@import './base/variables.scss';
-@import './features/breakpoints.scss';
-@import './components/container.scss';
-@import './features/animations.scss';
-
-@import './features/loader.scss';
-@import './features/visually_hidden.scss';
+@use './components/container';
+@use './features/visually_hidden';
 
 // base
 
-@import './base/reset';
-@import './base/fonts.scss';
+@use './base/reset';
+@use './base/fonts';
+@use './base/base';
 
-@import './base/base';
-@import './base/typography.scss';
+// components
 
-//components
-
-@import './components/hero';
-
-@import './components/section';
-@import './components/buttons.scss';
-@import './components/footer.scss';
-@import './components/header.scss';
-@import './components/modal_film.scss';
-@import './components/modal_team.scss';
-@import './components/modal_trailer.scss';
-@import './components/pagination.scss';
-@import './components/select.scss';
+@use './components/hero';
+@use './components/buttons';
+@use './components/footer';
+@use './components/header';
+@use './components/modal_film';
+@use './components/modal_team';
+@use './components/modal_trailer';
 
 // Home page
-@import './pages/home/weekly_trends.scss';
+@use './pages/home/weekly_trends';
 
 // Catalog page
-@import './pages/catalog/search.scss';
+@use './pages/catalog/search';
 
 // Hidden class
-@import './base/hidden.scss';
+@use './base/hidden';

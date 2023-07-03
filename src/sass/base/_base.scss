@@ -1,3 +1,5 @@
+@use 'src/sass/base/variables' as *;
+
 // Базовые стили
 :root {
   --title-text-color: #{$white-color};
@@ -32,6 +34,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  overflow-x: hidden;
 
   &.modal-open {
     overflow: hidden;

@@ -1,3 +1,5 @@
+@use 'src/sass/mixins/breakpoint' as *;
+
 .container {
   max-width: 320px;
 

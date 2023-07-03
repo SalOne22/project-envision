@@ -1,0 +1,42 @@
+@use 'src/sass/base/variables' as *;
+@use 'src/sass/mixins/breakpoint' as *;
+
+@mixin standard-orange-button($desktop-font-size, $desktop-line-height) {
+  padding: 11px 23px;
+  border-radius: 74px;
+  background: linear-gradient(
+      141.22deg,
+      $gradient-orange-color 9.4%,
+      $gradient-red-color 91.91%
+    )
+    border-box;
+  font-family: $font-family;
+  font-weight: $font-weight-medium;
+  font-size: 0.75rem;
+  line-height: 117.166667%; /* 14.06px / 12px */
+  color: $black-color;
+  transition: color $transition $transition-cubic-bezier;
+  border: 1px solid transparent;
+
+  &:focus-visible,
+  &:hover {
+    text-decoration: none;
+    color: $orange-color;
+    background: linear-gradient($white-color, $white-color) padding-box,
+      linear-gradient(
+          141.22deg,
+          $gradient-orange-color 9.4%,
+          $gradient-red-color 91.91%
+        )
+        border-box;
+  }
+
+  @include media-query(tablet) {
+    font-size: 0.875rem;
+  }
+
+  @include media-query(desktop) {
+    font-size: $desktop-font-size;
+    line-height: $desktop-line-height;
+  }
+}

@@ -1,3 +1,6 @@
+@use 'src/sass/base/variables' as *;
+@use 'src/sass/mixins/select' as *;
+
 .section-catalog {
   padding-top: 40px;
   position: relative;
@@ -270,10 +273,6 @@
 
 .pagination ul li.list-item.first {
   margin: 0px 4px 0 4px;
-}
-
-.pagination ul li.list-item.last {
-  // margin: 0px -4px 0 4px;
 }
 
 .pagination ul li.dots {

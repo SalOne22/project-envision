@@ -1,3 +1,6 @@
+@use 'src/sass/base/variables' as *;
+@use 'src/sass/mixins/breakpoint' as *;
+
 body.show-trailer-modal .trailer-modal__backdrop {
   opacity: 1;
   visibility: visible;
@@ -55,6 +58,10 @@ body.show-trailer-modal .trailer-modal__backdrop {
     display: flex;
     border-radius: 20px;
   }
+}
+
+.trailer-modal__content {
+  width: 100%;
 }
 
 .trailer-modal__title {
@@ -167,18 +174,7 @@ body.show-trailer-modal .trailer-modal__backdrop {
 }
 
 .trailer-container {
-  width: 214px;
-  height: 200px;
-
-  @include media-query(tablet) {
-    width: 521px;
-    height: 330px;
-  }
-
-  @include media-query(desktop) {
-    width: 600px;
-    height: 320px;
-  }
+  height: 100%;
 }
 
 .iframe-trailer {

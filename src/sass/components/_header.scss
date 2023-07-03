@@ -1,3 +1,6 @@
+@use 'src/sass/base/variables' as *;
+@use 'src/sass/mixins/breakpoint' as *;
+
 .header {
   padding: 8px 0;
   background-color: $header-bg-color;
