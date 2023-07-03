@@ -1,5 +1,5 @@
-import { fetchRandomTrailerKey } from '../api/fetch-api.js';
-import { modalTrailerRefs } from '../refs/modal_trailer-refs.js';
+import { fetchRandomTrailerKey } from 'js/api/fetch-api.js';
+import { modalTrailerRefs } from 'js/refs/modal_trailer-refs.js';
 
 export async function onTrailerBtnClick(event) {
   try {

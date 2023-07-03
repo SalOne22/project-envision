@@ -1,6 +1,6 @@
-import movieCardMarkup from '../../markup/movieCardMarkup';
-import initRatings from '../../utils/initRating';
-import { onOpenModalFilmById } from '../../modals/modal_film';
+import movieCardMarkup from 'js/markup/movieCardMarkup';
+import initRatings from 'js/utils/initRating';
+import { onOpenModalFilmById } from 'js/modals/modal_film';
 
 export function makeMovieList(moviesToShow, movieListEl) {
   movieListEl.innerHTML = moviesToShow.map(movieCardMarkup).join('');

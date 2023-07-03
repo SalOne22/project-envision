@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
-import getUpcomingMovies from '../api/upcomingAPI';
-import markupUpcomingMovies from '../markup/upcomingMarkup';
+import getUpcomingMovies from 'js/api/upcomingAPI';
+import markupUpcomingMovies from 'js/markup/upcomingMarkup';
 
 getUpcomingMovies()
   .then(data => {

@@ -1,13 +1,14 @@
+import movieCardMarkup from 'js/markup/movieCardMarkup';
+import refs from 'js/refs/library-refs';
+import loaderWrapper from 'js/loader';
+
 import {
   checkMovie,
   removeMovie,
   saveMovie,
   loadMovie,
-} from '../api/libraryAPI';
-import { onCloseModalFilm } from '../modals/modal_film';
-import loaderWrapper from '../loader';
-import refs from '../refs/library-refs';
-import movieCardMarkup from '../markup/movieCardMarkup';
+} from 'js/api/libraryAPI';
+import { onCloseModalFilm } from 'js/modals/modal_film';
 
 const PAGE_SIZE = 9;
 

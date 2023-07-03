@@ -1,5 +1,5 @@
-import genres from '../genres.json';
-import initAddToLibraryBtn from '../utils/initAddToLibraryBtn';
+import genres from 'js/genres.json';
+import initAddToLibraryBtn from 'js/utils/initAddToLibraryBtn';
 
 const MAX_NUMBER_OF_GENRES = 2;
 

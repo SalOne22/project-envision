@@ -1,4 +1,4 @@
-import { modalTeamRefs } from '../refs/modal-team-refs';
+import { modalTeamRefs } from 'js/refs/modal-team-refs';
 
 const ANIMATION_DELAY = 200;
 

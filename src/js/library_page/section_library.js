@@ -1,15 +1,16 @@
-import movieCardMarkup from '../markup/movieCardMarkup';
-import populateOptions from '../utils/populateOptions';
-import initRatings from '../utils/initRating';
-import { loadMovies } from '../api/libraryAPI';
-import { onOpenModalFilmById } from '../modals/modal_film';
-import refs from '../refs/library-refs';
-
 import customSelect from 'custom-select';
 
-import data from '../genres.json';
+import movieCardMarkup from 'js/markup/movieCardMarkup';
+import populateOptions from 'js/utils/populateOptions';
+import loaderWrapper from 'js/loader';
+import initRatings from 'js/utils/initRating';
+import refs from 'js/refs/library-refs';
+
+import { loadMovies } from 'js/api/libraryAPI';
+import { onOpenModalFilmById } from 'js/modals/modal_film';
+
+import data from 'js/genres.json';
 import 'custom-select/build/custom-select.css';
-import loaderWrapper from '../loader';
 
 const PAGE_SIZE = 9;
 let page = 1;

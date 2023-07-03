@@ -1,5 +1,5 @@
 import axios from 'axios';
-import initAddToLibraryBtn from '../utils/initAddToLibraryBtn';
+import initAddToLibraryBtn from 'js/utils/initAddToLibraryBtn';
 
 const MAX_NUMBER_OF_GENRES = 2;
 

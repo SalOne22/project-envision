@@ -1,4 +1,4 @@
-import genres from '../genres.json';
+import genres from 'js/genres.json';
 
 const MAX_CHARS_IN_GENRES = 20;
 const DIGITS_IN_YEAR = 4;

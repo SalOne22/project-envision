@@ -1,4 +1,4 @@
-import { fetchMoviesFilter } from '../api/catalogAPI';
+import { fetchMoviesFilter } from 'js/api/catalogAPI';
 
 export class Filter {
   constructor({ filter, year }) {

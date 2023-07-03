@@ -1,9 +1,10 @@
-import { fetchTrendingMoviesByDay } from '../../api/fetch-api.js';
-import { onTrailerBtnClick } from '../../modals/modal_trailer.js';
-import { heroRefs } from '../../refs/hero-refs.js';
-import { onOpenModalFilmById } from '../../modals/modal_film.js';
-import heroMarkup from '../../markup/heroMarkup.js';
-import loaderWrapper from '../../loader.js';
+import heroMarkup from 'js/markup/heroMarkup.js';
+import loaderWrapper from 'js/loader.js';
+
+import { fetchTrendingMoviesByDay } from 'js/api/fetch-api.js';
+import { onTrailerBtnClick } from 'js/modals/modal_trailer.js';
+import { heroRefs } from 'js/refs/hero-refs.js';
+import { onOpenModalFilmById } from 'js/modals/modal_film.js';
 
 const MAX_TRENDING_MOVIES = 20;
 const NUMBER_OF_STARS = 10;
