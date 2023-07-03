@@ -6,8 +6,13 @@ export async function onTrailerBtnClick(event) {
     const movieId =
       event.currentTarget.dataset.movieId || event.target.dataset.movieId;
 
-    if (!movieId) return;
     showTrailerModal();
+
+    if (!movieId) {
+      modalTrailerRefs.noMovieContainerEl.classList.remove('trailer-is-hidden');
+      modalTrailerRefs.trailerContainerEl.classList.add('trailer-is-hidden');
+      return;
+    }
 
     modalTrailerRefs.trailerContainerEl.classList.remove('trailer-is-hidden');
     modalTrailerRefs.noMovieContainerEl.classList.add('trailer-is-hidden');
