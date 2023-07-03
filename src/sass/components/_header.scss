@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
   }
+
   // .header__logo
 
   #{&}__logo {
@@ -38,7 +39,7 @@
   #{&}__logo-text {
     margin-left: 8px;
     font-size: $font-size-subbody;
-    line-height: 116.666667%; /* 28px / 24px */
+    line-height: 116.6667%; /* 28px / 24px */
     color: $header-logo-color;
 
     @include media-query(mobile) {
@@ -53,7 +54,7 @@
     margin-left: 92px;
     font-weight: $font-weight-medium;
     font-size: $font-size-caption;
-    line-height: 116.666667%; /* 14px / 12px */
+    line-height: 116.6667%; /* 14px / 12px */
     color: $header-link-color;
 
     @include media-query(mobile) {
@@ -92,7 +93,7 @@
     text-transform: uppercase;
     text-decoration: none;
     font-size: $font-size-tiny;
-    line-height: 114.285714%; /* 16px/14px */
+    line-height: 114.2857%; /* 16px/14px */
     color: $header-link-color;
 
     &:focus-visible,
@@ -105,22 +106,18 @@
 
 .theme-switcher {
   position: relative;
-
   display: flex;
   justify-content: space-between;
   margin-left: auto;
-
   background-image: linear-gradient(
     141.22deg,
     $gradient-orange-color 9.4%,
     $gradient-red-color 91.91%
   );
   border-radius: 194px;
-
   width: 60px;
   height: 24px;
   padding: 5.5px;
-
   cursor: pointer;
 
   @include media-query(mobile) {
@@ -144,12 +141,10 @@
     height: 18px;
     top: 3px;
     right: 3px;
-
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path fill="%23fff" d="M2.54 2.24a6.5 6.5 0 0 1 9.34-.02 6.86 6.86 0 0 1-.02 9.54 6.5 6.5 0 0 1-9.34.02 6.86 6.86 0 0 1 .02-9.54Z"/><path stroke="url(%23a)" stroke-linecap="round" stroke-width="1.2" d="M11 2.93a6.32 6.32 0 0 1-.02 8.38"/><defs><linearGradient id="a" x1="11.17" x2="13.97" y1="3.53" y2="4.19" gradientUnits="userSpaceOnUse"><stop stop-color="%23FFC226"/><stop offset="1" stop-color="%23F84119"/></linearGradient></defs></svg>');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
     transition: transform $transition * 1.5 $transition-cubic-bezier,
       right $transition * 1.5 $transition-cubic-bezier;
 
@@ -175,13 +170,12 @@
   display: none;
   position: absolute;
   z-index: 15;
-
   width: 0;
   height: 100%;
-
   top: 0;
   left: 0;
   background-color: transparent;
+
   // Хак чтобы бэкдроп не мешался при кликах
   transition: background-color $transition * 1.5 $transition-cubic-bezier,
     width 0s linear $transition * 1.5;
@@ -193,17 +187,16 @@
   #{&}__container {
     width: 204px;
     height: 428px;
-
     background-color: $mobile-menu-bg-color;
-    border-radius: 0px 8px 8px 0px;
+    border-radius: 0 8px 8px 0;
     padding: 8px 20px;
-
     transform: translateX(-100vw);
     transition: transform $transition * 1.5 $transition-cubic-bezier;
   }
 
   &.is-open {
     background-color: $mobile-menu-backdrop-color;
+
     // Хак чтобы бэкдроп не мешался при кликах
     width: 100%;
     transition: background-color $transition * 1.5 $transition-cubic-bezier 1ms,

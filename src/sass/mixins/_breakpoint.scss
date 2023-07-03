@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $breakpoints: (
   mobile: 320px,
   tablet: 768px,
@@ -6,24 +8,24 @@ $breakpoints: (
 
 @mixin media-query($breakpoint) {
   @if $breakpoint == mobile {
-    @media only screen and (max-width: #{map-get($breakpoints, tablet) - 1}) {
+    @media only screen and (max-width: #{map.get($breakpoints, tablet) - 1}) {
       @content;
     }
   } @else if $breakpoint == tablet {
-    $min-width: map-get($breakpoints, $breakpoint);
-    $max-width: map-get($breakpoints, desktop) - 1;
+    $min-width: map.get($breakpoints, $breakpoint);
+    $max-width: map.get($breakpoints, desktop) - 1;
 
     @media only screen and (min-width: #{$min-width}) and (max-width: #{$max-width}) {
       @content;
     }
   } @else if $breakpoint == 'tablet-min' {
-    $min-width: map-get($breakpoints, tablet);
+    $min-width: map.get($breakpoints, tablet);
 
     @media only screen and (min-width: #{$min-width}) {
       @content;
     }
   } @else if $breakpoint == desktop {
-    @media only screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+    @media only screen and (min-width: #{map.get($breakpoints, $breakpoint)}) {
       @content;
     }
   }

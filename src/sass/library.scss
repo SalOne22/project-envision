@@ -11,13 +11,11 @@
 
 @use './base/reset';
 @use './base/fonts';
-
 @use './base/base';
 
-//components
+// components
 
 @use './components/hero';
-
 @use './components/buttons';
 @use './components/footer';
 @use './components/header';

@@ -13,9 +13,6 @@
   text-align: center;
   color: var(--title-text-color);
   margin: auto;
-}
-
-.gallery-empty {
   padding-top: 32px;
   font-style: normal;
   font-weight: 400;
@@ -42,7 +39,6 @@
 
 .box-search {
   position: relative;
-
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -53,44 +49,43 @@
   position: relative;
 }
 
+.form-input,
+.clear-btn,
+.search-wrapper {
+  position: relative;
+}
+
 .form-input {
   height: 42px;
   width: 173px;
   font-size: 14px;
   outline: none;
   margin-bottom: 12px;
-
   padding: 10px;
   padding-left: 20px;
   transition: 0.5s;
   background-color: transparent;
-  padding: 10px;
   border: 1px solid $select-main-color;
   border-radius: 8px;
   color: $input-text-color;
 }
 
 .form-input ~ span {
-  font-family: 'Roboto';
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-
   align-items: center;
   text-align: left;
   color: $input-text-color;
-
   position: absolute;
   left: 10px;
   top: 7px;
   padding: 5px;
   transition: 0.3s;
-
   background-color: $bg-color;
-
   letter-spacing: 1px;
-
   z-index: -1;
 }
 
@@ -117,14 +112,12 @@
   width: 40px;
   height: 40px;
   padding: 11px;
-
   background: linear-gradient(
       141.22deg,
       $gradient-orange-color 9.4%,
       $gradient-red-color 91.91%
     )
     border-box;
-
   border-radius: 50%;
   transition: color $transition $transition-cubic-bezier;
   border: 1px solid transparent;
@@ -169,12 +162,6 @@
   border-radius: 10px;
 }
 
-.form-input,
-.clear-btn,
-.search-wrapper {
-  position: relative;
-}
-
 .search-wrapper {
   width: 500px;
   margin: auto;
@@ -185,14 +172,13 @@
   border: 1px solid transparent;
   background-color: transparent;
   display: inline-block;
-
   display: none;
   vertical-align: middle;
   outline: 0;
   cursor: pointer;
 }
 
-.clear-btn:after {
+.clear-btn::after {
   content: 'X';
   display: block;
   width: 26px;
@@ -220,6 +206,7 @@
 
 .year-select {
   @include custom-select(95px, 95px, 95px, false);
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -235,14 +222,13 @@
   display: flex;
   flex-wrap: wrap;
   background: transparent;
-
   border-radius: 50px;
   justify-content: center;
   align-items: center;
 }
 
 .pagination ul li {
-  font-family: 'Roboto';
+  font-family: Roboto, sans-serif;
   color: $input-text-color;
   font-style: normal;
   line-height: 10px;
@@ -260,7 +246,6 @@
   width: 24px;
   height: 24px;
   margin: 0 4px;
-
   border-radius: 50%;
   border: 1px solid $input-text-color;
   justify-content: center;
@@ -272,7 +257,7 @@
 }
 
 .pagination ul li.list-item.first {
-  margin: 0px 4px 0 4px;
+  margin: 0 4px;
 }
 
 .pagination ul li.dots {
@@ -284,7 +269,7 @@
   border-radius: 50px;
   width: 20px;
   height: 20px;
-  border: 0px solid $input-text-color;
+  border: 0 solid $input-text-color;
 }
 
 .pagination li.active,
@@ -297,13 +282,11 @@
 
 li.btn.prev.list-item {
   font-size: 22px;
-
-  font-family: 'Roboto';
+  font-family: Roboto, sans-serif;
   color: $pagination-secondary-color;
   font-style: normal;
   line-height: 10px;
   text-align: center;
-
   font-weight: 400;
   cursor: pointer;
   user-select: none;
@@ -313,13 +296,11 @@ li.btn.prev.list-item {
 
 li.btn.next.list-item {
   font-size: 22px;
-
-  font-family: 'Roboto';
+  font-family: Roboto, sans-serif;
   color: $pagination-secondary-color;
   font-style: normal;
   line-height: 10px;
   text-align: center;
-
   font-weight: 400;
   cursor: pointer;
   user-select: none;
@@ -341,14 +322,13 @@ li.btn.next.list-item:hover {
   background: transparent;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .section-catalog {
     padding-top: 60px;
   }
 
   .search-form {
     margin-bottom: 36px;
-
     justify-content: center;
     column-gap: 12px;
   }
@@ -367,9 +347,8 @@ li.btn.next.list-item:hover {
     top: 9px;
   }
 
-  .clear-btn:after {
+  .clear-btn::after {
     top: -2px;
-
     right: 15px;
   }
 
@@ -419,14 +398,13 @@ li.btn.next.list-item:hover {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (width >= 1280px) {
   .section-catalog {
     padding-top: 80px;
   }
 
   .search-form {
     margin-bottom: 48px;
-
     justify-content: center;
     column-gap: 18px;
   }
@@ -445,9 +423,8 @@ li.btn.next.list-item:hover {
     top: 9px;
   }
 
-  .clear-btn:after {
+  .clear-btn::after {
     top: -2px;
-
     right: 15px;
   }
 

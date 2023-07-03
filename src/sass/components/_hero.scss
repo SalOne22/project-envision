@@ -36,11 +36,10 @@
   &__wrap {
     background-image: linear-gradient(
         86.77deg,
-        #111111 30.38%,
-        rgba(17, 17, 17, 0) 65.61%
+        #111 30.38%,
+        rgb(17 17 17 / 0%) 65.61%
       ),
       var(--poster-url-mobile);
-
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -49,23 +48,23 @@
       background-position: center;
     }
 
-    @media media-query and (min-width: 780px),
+    @media media-query and (width >= 780px),
       (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
+      (resolution >= 192dpi),
+      (resolution >= 2dppx) {
       background-image: linear-gradient(
           86.77deg,
-          #111111 30.38%,
-          rgba(17, 17, 17, 0) 65.61%
+          #111 30.38%,
+          rgb(17 17 17 / 0%) 65.61%
         ),
         var(--poster-url-tablet);
     }
 
-    @media media-query and (min-width: 1280px) {
+    @media media-query and (width >= 1280px) {
       background-image: linear-gradient(
           86.77deg,
-          #111111 30.38%,
-          rgba(17, 17, 17, 0) 65.61%
+          #111 30.38%,
+          rgb(17 17 17 / 0%) 65.61%
         ),
         var(--poster-url);
     }
@@ -74,20 +73,20 @@
   &--bg {
     background-image: linear-gradient(
         79.49deg,
-        #111111 34.1%,
-        rgba(17, 17, 17, 0) 64.67%
+        #111 34.1%,
+        rgb(17 17 17 / 0%) 64.67%
       ),
       url('../img/hero/poster-tablet@1x.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
     @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
+      (resolution >= 192dpi),
+      (resolution >= 2dppx) {
       background-image: linear-gradient(
           79.49deg,
-          #111111 34.1%,
-          rgba(17, 17, 17, 0) 64.67%
+          #111 34.1%,
+          rgb(17 17 17 / 0%) 64.67%
         ),
         url('../img/hero/poster-tablet@2x.jpg');
     }
@@ -96,19 +95,19 @@
       height: 432px;
       background-image: linear-gradient(
           79.49deg,
-          #111111 34.1%,
-          rgba(17, 17, 17, 0) 64.67%
+          #111 34.1%,
+          rgb(17 17 17 / 0%) 64.67%
         ),
         url('../img/hero/poster-desktop@1x.jpg');
       background-position: 0, 200px 0;
 
       @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
+        (resolution >= 192dpi),
+        (resolution >= 2dppx) {
         background-image: linear-gradient(
             79.49deg,
-            #111111 34.1%,
-            rgba(17, 17, 17, 0) 64.67%
+            #111 34.1%,
+            rgb(17 17 17 / 0%) 64.67%
           ),
           url('../img/hero/poster-desktop@2x.jpg');
       }
@@ -116,7 +115,6 @@
 
     @include media-query(desktop) {
       height: 720px;
-
       background-size: 1280px;
       background-position: 0, 400px 0;
     }
@@ -125,20 +123,20 @@
   &--bg-lib {
     background-image: linear-gradient(
         79.49deg,
-        #111111 34.1%,
-        rgba(17, 17, 17, 0) 64.67%
+        #111 34.1%,
+        rgb(17 17 17 / 0%) 64.67%
       ),
       url('../img/hero/lib-poster-tablet@1x.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
     @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
+      (resolution >= 192dpi),
+      (resolution >= 2dppx) {
       background-image: linear-gradient(
           79.49deg,
-          #111111 34.1%,
-          rgba(17, 17, 17, 0) 64.67%
+          #111 34.1%,
+          rgb(17 17 17 / 0%) 64.67%
         ),
         url('../img/hero/lib-poster-tablet@2x.jpg');
     }
@@ -147,19 +145,19 @@
       height: 432px;
       background-image: linear-gradient(
           79.49deg,
-          #111111 34.1%,
-          rgba(17, 17, 17, 0) 64.67%
+          #111 34.1%,
+          rgb(17 17 17 / 0%) 64.67%
         ),
         url('../img/hero/lib-poster-tablet@1x.jpg');
       background-position: 0, 200px 0;
 
       @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
+        (resolution >= 192dpi),
+        (resolution >= 2dppx) {
         background-image: linear-gradient(
             79.49deg,
-            #111111 34.1%,
-            rgba(17, 17, 17, 0) 64.67%
+            #111 34.1%,
+            rgb(17 17 17 / 0%) 64.67%
           ),
           url('../img/hero/lib-poster-tablet@2x.jpg');
       }
@@ -169,20 +167,20 @@
       height: 720px;
       background-image: linear-gradient(
           79.49deg,
-          #111111 34.1%,
-          rgba(17, 17, 17, 0) 64.67%
+          #111 34.1%,
+          rgb(17 17 17 / 0%) 64.67%
         ),
         url('../img/hero/lib-poster-desktop@1x.jpg');
       background-size: 1280px;
       background-position: 0, 400px 0;
 
       @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
+        (resolution >= 192dpi),
+        (resolution >= 2dppx) {
         background-image: linear-gradient(
             79.49deg,
-            #111111 34.1%,
-            rgba(17, 17, 17, 0) 64.67%
+            #111 34.1%,
+            rgb(17 17 17 / 0%) 64.67%
           ),
           url('../img/hero/lib-poster-desktop@2x.jpg');
       }
@@ -209,7 +207,7 @@
   &__title {
     // width: 250px;
     max-width: 250px;
-    color: #ffffff;
+    color: #fff;
     font-weight: 700;
     font-size: 32px;
     line-height: 1.19;
@@ -269,9 +267,6 @@
       @include media-query(tablet) {
         width: 295px;
       }
-
-      @include media-query(desktop) {
-      }
     }
 
     &--add {
@@ -301,32 +296,29 @@
       padding: 10px 24px;
     }
 
-    @include media-query(desktop) {
-    }
-
     &--primary {
-      color: #111111;
+      color: #111;
       border-color: transparent;
       background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
       transition: all $transition $transition-cubic-bezier;
       border-radius: 74px;
 
       &:hover {
-        background: #ffffff;
-        border-color: #ffffff;
+        background: #fff;
+        border-color: #fff;
       }
     }
 
     &--secondary {
-      color: #ffffff;
-      border: 1px solid #ffffff;
+      color: #fff;
+      border: 1px solid #fff;
       background: transparent;
       transition: all $transition $transition-cubic-bezier;
       border-radius: 74px;
 
       &:hover {
-        color: #111111;
-        background: #ffffff;
+        color: #111;
+        background: #fff;
       }
     }
   }
@@ -428,7 +420,7 @@
 
   &__title {
     width: 235px;
-    color: #ffffff;
+    color: #fff;
     font-weight: 700;
     font-size: 32px;
     line-height: 1.19;

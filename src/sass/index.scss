@@ -11,10 +11,9 @@
 
 @use './base/reset';
 @use './base/fonts';
-
 @use './base/base';
 
-//components
+// components
 
 @use './components/buttons';
 @use './components/footer';
@@ -22,7 +21,6 @@
 @use './components/modal_film';
 @use './components/modal_team';
 @use './components/modal_trailer';
-
 @use './components/hero';
 
 // Home page

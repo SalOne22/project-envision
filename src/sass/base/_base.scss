@@ -9,7 +9,7 @@
   --header-logo-color: #{$white-color};
   --header-link-color: #{$light-grey-color};
   --mobile-menu-bg-color: #171717;
-  --mobile-menu-backdrop-color: rgba(255, 255, 255, 0.2);
+  --mobile-menu-backdrop-color: rgba(255 255 255 20%);
   --upcoming-grey-text-color: #{$light-grey-color};
   --upcoming-white-text-color: #{$white-color};
   --upcoming-shield-bg-color: #{$white-color};
@@ -30,7 +30,7 @@ html {
 
 body {
   background-color: $bg-color;
-  font-family: 'Roboto';
+  font-family: Roboto, sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -49,7 +49,7 @@ body {
     --header-logo-color: #{$dark-grey-color};
     --header-link-color: #{$grey-color};
     --mobile-menu-bg-color: #{$off-white-color};
-    --mobile-menu-backdrop-color: rgba(0, 0, 0, 0.2);
+    --mobile-menu-backdrop-color: rgba(0 0 0 20%);
     --upcoming-grey-text-color: #{$black-color};
     --upcoming-white-text-color: #{$dark-grey-color};
     --upcoming-shield-bg-color: #{$off-white-color};

@@ -3,26 +3,23 @@
 // Colors
 
 $orange-color: #f87719;
-$black-color: #111111;
+$black-color: #111;
 $darker-grey-color: #1c1c1c;
 $dark-grey-color: #282828;
 $grey-color: #595959;
 $light-grey-color: #b7b7b7;
 $off-white-color: #f8f8f8;
-$white-color: #ffffff;
-
-$gradient-orange-color: rgba(255, 194, 38, 1);
-$gradient-red-color: rgba(248, 65, 25, 1);
+$white-color: #fff;
+$gradient-orange-color: rgb(255 194 38 / 100%);
+$gradient-red-color: rgb(248 65 25 / 100%);
 
 // Text
 
 $font-primary: 'DM Sans', sans-serif;
 $font-family: 'Roboto';
-
 $font-weight-bold: 700;
 $font-weight-medium: 500;
 $font-weight-regular: 400;
-
 $font-size-main: 64px;
 $font-size-subheader: 28px;
 $font-size-header: 52px;

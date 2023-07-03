@@ -21,7 +21,6 @@
     .custom-select-panel {
       background-color: $select-option-bg-color;
       border-radius: 8px;
-
       transition: max-height $transition * 1.5 $transition-cubic-bezier,
         overflow-y 0.1s 0.5s;
       z-index: 15;
@@ -31,17 +30,13 @@
       min-width: $mobile-width;
       display: flex;
       justify-content: space-between;
-
       border: 1px solid $select-main-color;
       border-radius: 8px;
-
       background-color: transparent;
       color: $input-text-color;
-
       padding: 12px;
       padding-left: 16px;
-
-      line-height: 114.285714%; /* 16px / 14px */
+      line-height: 114.2857%; /* 16px / 14px */
 
       &::after {
         $arrow-svg-url: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 10.25L8 5.75L12.5 10.25" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
@@ -51,7 +46,6 @@
         width: 16px;
         height: 16px;
         background-color: $select-main-color;
-        -webkit-mask-image: $arrow-svg-url;
         mask-image: $arrow-svg-url;
         transform: rotate(180deg);
         transition: transform $transition $transition-cubic-bezier;
@@ -73,6 +67,7 @@
       .custom-select-opener::after {
         transform: rotate(0deg);
       }
+
       .custom-select-panel {
         border: 1px solid $select-main-color;
         max-height: 44px * 6;
@@ -84,21 +79,20 @@
     color: $text-color;
     cursor: pointer;
     line-height: 143%;
-    padding: 14px 20px 10px 20px;
-  }
+    padding: 14px 20px 10px;
 
-  .custom-select-option {
     &.has-focus {
       background-color: transparent;
       color: $orange-color;
-      @include remove-before();
+
+      @include remove-before;
     }
 
     &.is-selected {
-      @include remove-before();
+      @include remove-before;
     }
 
-    @if ($separator) {
+    @if $separator {
       &:nth-child(n + 3) {
         border-top: 0.5px solid $input-text-color;
       }

@@ -12,8 +12,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  line-height: 116.666667%; /* 14px / 12px */
-
+  line-height: 116.6667%; /* 14px / 12px */
   color: $footer-text-color;
 
   @include media-query('tablet-min') {
@@ -25,6 +24,7 @@
     line-height: calc(19 / 16);
   }
 }
+
 .site-footer {
   margin-top: auto;
   background: $bg-color;
@@ -41,12 +41,12 @@
     padding-bottom: 80px;
   }
 }
+
 .footer-link {
   color: $footer-text-color;
-
   text-decoration: underline;
   display: inline;
-  margin-top: 0px;
+  margin-top: 0;
   transition-property: color;
   transition-duration: $transition;
   transition-timing-function: $transition-cubic-bezier;
@@ -60,15 +60,17 @@
     margin-top: 6px;
   }
 }
+
 .heart-icon {
   margin-right: 10px;
   margin-left: 10px;
 }
+
 .footer-descr-copyright {
   margin-bottom: 8px;
 
   @include media-query('tablet-min') {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
 

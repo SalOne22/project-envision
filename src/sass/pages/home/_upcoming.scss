@@ -125,7 +125,7 @@
   background: $white-color;
 }
 
-@media screen and (max-width: 1279px) and (min-width: 768px) {
+@media screen and (width <= 1279px) and (width >= 768px) {
   .upcoming__section-title {
     font-size: 24px;
     line-height: 28px;
@@ -188,7 +188,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (width >= 1280px) {
   .upcoming__section-title {
     margin-bottom: 28px;
     font-size: 28px;
@@ -206,7 +206,6 @@
   .upcoming__poster {
     width: 805px;
     height: 458px;
-
     margin-bottom: 0;
   }
 
