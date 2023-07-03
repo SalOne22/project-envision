@@ -1,4 +1,5 @@
 import { fetchMoviesFilter } from 'js/api/catalogAPI';
+import loaderWrapper from '../loader';
 
 export class Filter {
   constructor({ filter, year }) {
@@ -8,7 +9,9 @@ export class Filter {
   }
 
   async searchMovie() {
-    const result = await fetchMoviesFilter(this.page, this.filter, this.year);
+    const result = await loaderWrapper(
+      fetchMoviesFilter(this.page, this.filter, this.year)
+    );
 
     return result;
   }

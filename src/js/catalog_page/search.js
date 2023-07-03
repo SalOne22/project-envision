@@ -1,4 +1,5 @@
 import { fetchMoviesSearch } from 'js/api/catalogAPI';
+import loaderWrapper from '../loader';
 
 export class Search {
   constructor({ query, year }) {
@@ -8,7 +9,9 @@ export class Search {
   }
 
   async searchMovie() {
-    const result = await fetchMoviesSearch(this.page, this.query, this.year);
+    const result = await loaderWrapper(
+      fetchMoviesSearch(this.page, this.query, this.year)
+    );
 
     return result;
   }

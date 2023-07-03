@@ -5,6 +5,7 @@ import Pagination from 'js/utils/pagination';
 import populateOptions from 'js/utils/populateOptions';
 import getYears from 'js/utils/getYears';
 import noMovieMarkup from 'js/markup/noMovieMarkup';
+import loaderWrapper from 'js/loader';
 import { makeMovieList, updateMovieList } from 'js/components/MovieList';
 import { fetchMoviesOfWeek } from 'js/api/catalogAPI';
 
@@ -105,7 +106,7 @@ function onSearch(event) {
 }
 
 async function getMoviesOfWeek(currentPage) {
-  let result = await fetchMoviesOfWeek(currentPage);
+  let result = await loaderWrapper(fetchMoviesOfWeek(currentPage));
 
   if (result.total_results === 0) {
     noMovie();
